@@ -5,27 +5,27 @@ public class Main {
     public static void main(String[] args) {
 
         //Operands
-        int valA = 21;
-        int valB = 6;
-        int valC = 3;
-        int valD = 1;
+        float floatVal = 1.0f;
+        double doubleVal = 4.0d;
+        byte byteVal = 7;
+        short shortVal = 7;
+        long longVal = 5;
+
+        short result1 = (short) (byteVal); // Implicit Conversion
+        short result2 = (short) longVal; // Explicit Conversion
+
 
         //Operations
-        int result1 = valA - valB / valC;
+        short result3 = (short) (byteVal - longVal); // Explicit Conversion
+        double result4 = longVal - doubleVal;
+        long result5 = (long) (shortVal - longVal + floatVal + doubleVal);
 
-        int result2 = (valA - valB) / valC; // Operator Precedence
-
+        //Print Result
         System.out.println(result1);
         System.out.println(result2);
-
-        int result3 = valA / valC * valD + valB;
-
-        int result4 = valA / (valC * (valD + valB));
-
         System.out.println(result3);
         System.out.println(result4);
-
-
+        System.out.println(result5);
 
     }
 }
