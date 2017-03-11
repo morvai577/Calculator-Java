@@ -5,11 +5,23 @@ package com.vaibhav.calculator;
  */
 public class MathEquation {
 
-    //Fields
-    public double leftVal;
-    public double rightVal;
-    public char opCode;
-    public double result;
+    //Make all fields private
+    private double leftVal;
+    private double rightVal;
+    private char opCode;
+    private double result;
+
+    //Accessors and Mutator
+    public double getLeftVal() {return leftVal;}
+    public double getRightVal() {return rightVal;}
+    public double getopCode() {return opCode;}
+
+    public void setLeftVal(double leftVal) {this.leftVal = leftVal;}
+    public void setRightVal(double rightVal) {this.rightVal = rightVal;}
+    public void setopCode(char opCode) {this.opCode = opCode;}
+
+    public double getResult() { return result;} // Do not allow result to be modified
+
 
     //Methods
     public void execute() {
