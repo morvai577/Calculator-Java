@@ -16,6 +16,27 @@ public class Main {
             equation.execute();
             System.out.println("result = " + equation.getResult());
         }
+
+        System.out.println();
+        System.out.println("Using Overloads");
+        System.out.println();
+
+        double leftDouble = 9.0d;
+        double rightDouble = 4.0d;
+        double leftInt = 9.0d;
+        double rightInt = 4.0d;
+
+        MathEquation equationOverload = new MathEquation('d');
+
+        equationOverload.execute(leftDouble, rightDouble);
+        System.out.print("result=");
+        System.out.println(equationOverload.getResult());
+
+        //The following works because of widening conversion
+        equationOverload.execute(leftInt, rightInt);
+        System.out.print("result=");
+        System.out.println(equationOverload.getResult());
+
     }
 
 
