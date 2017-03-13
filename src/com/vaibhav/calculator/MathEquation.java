@@ -23,6 +23,20 @@ public class MathEquation {
     public double getResult() { return result;} // Do not allow result to be modified
 
 
+    // Constructors
+    public MathEquation() {}
+
+    public MathEquation(char opCode){
+        this.opCode = opCode;
+    }
+
+    public MathEquation(char opCode, double leftVal, double rightVal){
+        this(opCode); // Chaining
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+    }
+
+
     //Methods
     public void execute() {
         switch (opCode) {
