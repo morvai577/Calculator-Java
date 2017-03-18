@@ -16,14 +16,26 @@ public class CalculateHelper {
     private static final char DIVIDE_SYMBOL = '/';
 
 
-    public void process(String statement){
+    public void process(String statement) throws InvalidStatementException{
         // add 1.0 2.0
-        String[] parts = statement.split(" ");;
+        String[] parts = statement.split(" ");
+        if(parts.length != 3)
+            throw new InvalidStatementException("Incorrect number of fields", statement);
+
         String commandString = parts[0]; // Get operator from string
+        try {
+            leftValue = Double.parseDouble(parts[1]);
+            rightValue = Double.parseDouble(parts[2]);
+        } catch (NumberFormatException e){
+            throw new InvalidStatementException("Non-numeric data", statement, e);
+
+        }
         leftValue = Double.parseDouble(parts[1]); // Convert string to double
         rightValue = Double.parseDouble(parts[2]); // Convert string to double
 
         setCommandFromString(commandString);
+        if (command == null)
+            throw new InvalidStatementException("Invalid command", statement);
 
         CalculateBase calculator = null;
         switch (command){
